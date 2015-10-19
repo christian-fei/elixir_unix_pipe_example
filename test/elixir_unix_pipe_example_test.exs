@@ -3,7 +3,7 @@ defmodule UnixTest do
   doctest Unix
 
   test "#ps returns operating system processes" do
-    assert Unix.ps == """
+    assert Unix.ps() == """
   PID TTY           TIME CMD
   494 ttys000    0:00.42 -/usr/local/bin/fish
  4369 ttys000    0:00.62 npm
@@ -15,11 +15,17 @@ defmodule UnixTest do
 
   test "#grep filters lines by match" do
     input = """
-    foo
-    bar
-    baz
+foo
+bar
+baz
     """
-    match = %r/fish/
-    assert Unix.grep(input, match) == []
+    match = ~r/ba/
+    assert Unix.grep(input, match) == ["bar","baz"]
+  end
+
+  test "#awk get specified column" do
+    input = ["foo bar"]
+    output = ["foo"]
+    assert Unix.awk(input, 1) == output
   end
 end

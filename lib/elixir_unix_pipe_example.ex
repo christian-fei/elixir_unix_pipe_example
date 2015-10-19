@@ -14,6 +14,18 @@ defmodule Unix do
   end
 
   def grep(input, match) do
-    []
+    String.split(input, "\n")
+    |> Enum.filter(&by_line(&1, match))
+  end
+
+  def awk(input, column) do
+    Enum.map(input, fn (line) ->
+      Regex.split(~r/ /, line)
+      |> Enum.at(column-1)
+    end)
+  end
+
+  defp by_line(line, match) do
+    Regex.match?(match, line)
   end
 end
