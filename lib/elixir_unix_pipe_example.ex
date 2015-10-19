@@ -12,4 +12,8 @@ defmodule Unix do
  9728 ttys001    0:00.79 -/usr/local/bin/fish
     """
   end
+
+  def grep(input, match) do
+    []
+  end
 end

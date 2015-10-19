@@ -12,4 +12,14 @@ defmodule UnixTest do
  9728 ttys001    0:00.79 -/usr/local/bin/fish
     """
   end
+
+  test "#grep filters lines by match" do
+    input = """
+    foo
+    bar
+    baz
+    """
+    match = %r/fish/
+    assert Unix.grep(input, match) == []
+  end
 end
