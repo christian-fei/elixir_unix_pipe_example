@@ -1,0 +1,2 @@
+defmodule ElixirUnixPipeExample do
+end
