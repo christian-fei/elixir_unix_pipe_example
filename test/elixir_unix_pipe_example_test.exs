@@ -25,7 +25,7 @@ baz
 
   test "#awk get specified column" do
     input = ["foo bar"]
-    output = ["foo"]
+    output = ["bar"]
     assert Unix.awk(input, 1) == output
   end
 end

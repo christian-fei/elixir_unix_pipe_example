@@ -13,15 +13,29 @@ defmodule Unix do
     """
   end
 
+  @doc ~S"""
+  Filter input by match
+
+  ## Examples
+    iex> Unix.grep("foo\nbar", ~r/foo/)
+    ["foo"]
+  """
   def grep(input, match) do
     String.split(input, "\n")
     |> Enum.filter(&by_line(&1, match))
   end
 
+  @doc ~S"""
+  Filter input by column
+
+  ## Examples
+    iex> Unix.awk(["foo bar"], 1)
+    ["bar"]
+  """
   def awk(input, column) do
     Enum.map(input, fn (line) ->
       Regex.split(~r/ /, line)
-      |> Enum.at(column-1)
+      |> Enum.at(column)
     end)
   end
 
