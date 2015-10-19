@@ -1,19 +1,11 @@
 # Unix
 
-**TODO: Add description**
+[![Build Status](https://travis-ci.org/christian-fei/elixir_unix_pipe_example.svg)](https://travis-ci.org/christian-fei/elixir_unix_pipe_example)
 
-## Installation
+## setup
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+```
+mix do deps.get, compile
 
-  1. Add elixir_unix_pipe_example to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:elixir_unix_pipe_example, "~> 0.0.1"}]
-        end
-
-  2. Ensure elixir_unix_pipe_example is started before your application:
-
-        def application do
-          [applications: [:elixir_unix_pipe_example]]
-        end
+mix test
+```
