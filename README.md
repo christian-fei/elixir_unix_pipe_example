@@ -1,4 +1,4 @@
-# ElixirUnixPipeExample
+# Unix
 
 **TODO: Add description**
 

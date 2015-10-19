@@ -1,4 +1,4 @@
-defmodule ElixirUnixPipeExample.Mixfile do
+defmodule Unix.Mixfile do
   use Mix.Project
 
   def project do
